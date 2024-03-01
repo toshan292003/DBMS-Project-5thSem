@@ -7,6 +7,9 @@ export default function About(){
             <section className="about-1">
                 <h1>about us</h1>
             </section>
+            <section className="about-2">
+                <h1></h1>
+            </section>
         </>
     )
 }

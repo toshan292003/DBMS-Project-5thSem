@@ -1,5 +1,5 @@
 .about-1{
-    background: url('https://img.freepik.com/free-photo/ocean-banner_64049-266.jpg?t=st=1709288658~exp=1709292258~hmac=3185e21356cd59357c46e72411b6c9829f3681328d7b87a9365d091fac5a94b4&w=1380');
+    background: url('https://img.freepik.com/free-vector/sea-with-waves-mountains-horizon_107791-10554.jpg?t=st=1709289167~exp=1709292767~hmac=2e1241139134de488efafce94483f0467c9e25ad30f21da39a7330d1a6ec97f0&w=1380');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,24 +14,18 @@
     width: 100vw;
     content: "";
     height: 600px;
-    background-color: #ffffff;
+    background-color: #0278ff;
     position: absolute;
     mix-blend-mode: color;
-}
-
-.about-1::after{
-    width: 100vw;
-    content: "";
-    height: 600px;
-    background-color: #8a8a8a;
-    position: absolute;
-    opacity: 80%;
-    mix-blend-mode: multiply;
 }
 
 .about-1 h1{
     text-transform: uppercase;
     font-size: 5rem;
     z-index: 2;
-    
+    color: black;
+    font-family: "Lexend",sans-serif;
+    font-weight: 600;
+    letter-spacing: 10px;
 }
+
