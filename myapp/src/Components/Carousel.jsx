@@ -36,7 +36,8 @@ export default function Carousel() {
           ))}
         </Slider>
         <section>
-            
+            <span className="progress">
+            </span>
         </section>
       </div>
     </>
