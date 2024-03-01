@@ -1,4 +1,37 @@
 .about-1{
-    background: url('https://images.pexels.com/photos/3560168/pexels-photo-3560168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background: url('https://img.freepik.com/free-photo/ocean-banner_64049-266.jpg?t=st=1709288658~exp=1709292258~hmac=3185e21356cd59357c46e72411b6c9829f3681328d7b87a9365d091fac5a94b4&w=1380');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-1::before{
+    width: 100vw;
+    content: "";
+    height: 600px;
+    background-color: #ffffff;
+    position: absolute;
+    mix-blend-mode: color;
+}
+
+.about-1::after{
+    width: 100vw;
+    content: "";
+    height: 600px;
+    background-color: #8a8a8a;
+    position: absolute;
+    opacity: 80%;
+    mix-blend-mode: multiply;
+}
+
+.about-1 h1{
+    text-transform: uppercase;
+    font-size: 5rem;
+    z-index: 2;
     
 }
