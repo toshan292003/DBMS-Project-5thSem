@@ -1,31 +1,5 @@
-.about-1{
-    background: url('https://img.freepik.com/free-vector/sea-with-waves-mountains-horizon_107791-10554.jpg?t=st=1709289167~exp=1709292767~hmac=2e1241139134de488efafce94483f0467c9e25ad30f21da39a7330d1a6ec97f0&w=1380');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-1::before{
-    width: 100vw;
-    content: "";
-    height: 600px;
-    background-color: #0278ff;
-    position: absolute;
-    mix-blend-mode: color;
-}
-
-.about-1 h1{
-    text-transform: uppercase;
+#about-1{
     font-size: 5rem;
-    z-index: 2;
-    color: black;
-    font-family: "Lexend",sans-serif;
+    font-family: "Lexend";
     font-weight: 600;
-    letter-spacing: 10px;
 }
-
