@@ -11,7 +11,7 @@ export default function Navbar() {
                 <div className="nav-profile">
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="">Build Resume</a></li>
+                        <li><a href="/services">Services</a></li>
                         <li><a href="/about">About Us</a></li>
                         <li><a href="">Contact Us</a></li>
                     </ul>

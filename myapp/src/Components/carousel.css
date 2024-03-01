@@ -1,0 +1,12 @@
+.carou img{
+    width: 100%;
+}
+
+.carou{
+    width: 70vw;
+}
+
+.carou div{
+    height: 876px;
+    overflow: hidden;
+}

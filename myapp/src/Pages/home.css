@@ -129,11 +129,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  width: 70vw;
+  gap: 100px;
 }
 
 .home-section1 img {
   height: 500px;
+}
+
+.home-section1 section{
+  max-width: 50%;
 }
 
 .home-section1 section span,
@@ -157,6 +163,7 @@
   font-weight: 400;
   margin: 20px;
   margin-left: 0;
+  text-align: justify;
 }
 .home-section1 section button {
   background-color: var(--homebuttoncolor);
