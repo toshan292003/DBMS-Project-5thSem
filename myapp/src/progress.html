@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgb(212, 231, 255);
+            width: 100%;
+        }
+
+        .outer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.675),
+                6px 6px 20px rgba(0, 0, 0, 0.20);
+            border-radius: 50%;
+        }
+
+        .inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            width: 150px;
+            box-shadow: inset -6px -6px 20px rgba(1, 1, 1, 0.05),
+                inset 6px 6px 20px rgba(255, 255, 255, 0.),
+                -.5px -.5px 0px white,
+                .5px .5px 0px rgba(0, 0, 0, 0.222),
+                0px 12px 10px -10px rgba(0, 0, 0, 0.777);
+            border-radius: 50%;
+        }
+
+        circle {
+            fill: none;
+            position: absolute;
+            stroke: url('#GradientColor');
+            stroke-width: 20px;
+            stroke-dasharray: 500;
+            stroke-dashoffset: 400;
+            transition: all 1s ease;
+        }
+
+        circle:hover {
+            stroke-dasharray: 300;
+            stroke-dashoffset: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+            <defs>
+                <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#e91e63" />
+                    <stop offset="100%" stop-color="#673ab7" />
+                </linearGradient>
+            </defs>
+            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+        </svg>
+        67
+    </div>
+
+</body>
+
+</html>
