@@ -7,8 +7,8 @@ export default function Home() {
       <div className="homebox">
         <div>
           <img src="https://e1.pxfuel.com/desktop-wallpaper/766/164/desktop-wallpaper-letter-r-r-logo-3d.jpg"alt=""/>
-          <h1>Resume Builder</h1>
-          <button>Build Resume</button>
+          <h1>Water Purity Tracker</h1>
+          <button>Add Samples</button>
         </div>
         <span className="home-items home-tri"></span>
         <span className="home-items home-circle"></span>
@@ -31,7 +31,7 @@ export default function Home() {
               Streamlining the process, it ensures a polished presentation to
               potential employers.
             </p>
-            <button>Build Resume</button>
+            <button>Water Purity Tracker</button>
           </section>
         </div>
         <div>
