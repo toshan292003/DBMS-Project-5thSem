@@ -19,7 +19,7 @@
 .progress{
     display: block;
     height: 100px;
-    width: 100px; 
+    width: 100px;
     stroke: #fff;
     stroke-width: 2px;
     stroke-dashoffset: 500px;

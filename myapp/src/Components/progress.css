@@ -1,0 +1,46 @@
+.services{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.1),
+        6px 6px 20px rgba(0, 0, 0, 0.80);
+    border-radius: 50%;
+}
+
+
+circle {
+    fill: none;
+    position: absolute;
+    stroke: url('#GradientColor');
+    stroke-width: 20px;
+    stroke-dasharray: 400 ;
+    stroke-linecap: round;
+}
+span{
+    position: absolute;
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.services section{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-left: 100px;
+    height: 800px;
+}

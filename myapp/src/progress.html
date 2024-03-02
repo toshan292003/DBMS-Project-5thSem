@@ -26,7 +26,7 @@
             justify-content: center;
             width: 200px;
             height: 200px;
-            box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.675),
+            box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.875),
                 6px 6px 20px rgba(0, 0, 0, 0.20);
             border-radius: 50%;
         }
@@ -50,14 +50,15 @@
             position: absolute;
             stroke: url('#GradientColor');
             stroke-width: 20px;
-            stroke-dasharray: 500;
-            stroke-dashoffset: 400;
-            transition: all 1s ease;
-        }
-
-        circle:hover {
             stroke-dasharray: 300;
             stroke-dashoffset: 0;
+            transition: all 1s ease;
+        }
+        span{
+            position: absolute;
+            font-weight: 500;
+            font-size: 1.3rem;
+            font-family:Arial, Helvetica, sans-serif;
         }
     </style>
 </head>
@@ -73,7 +74,7 @@
             </defs>
             <circle cx="80" cy="80" r="70" stroke-linecap="round" />
         </svg>
-        67
+        <span>67%</span>
     </div>
 
 </body>
