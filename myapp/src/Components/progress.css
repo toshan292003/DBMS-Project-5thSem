@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: space-between;
     width: 100vw;
+    height: inherit;
+    overflow: hidden;
 }
 
 .probox{
@@ -23,8 +25,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.1),
         6px 6px 20px rgba(0, 0, 0, 0.80);
     border-radius: 50%;
@@ -41,7 +43,7 @@ circle {
     transform-origin: center;
     transform: rotate(-90deg);
 }
-span{
+.inner span{
     position: absolute;
     font-weight: 500;
     font-size: 1.3rem;
@@ -51,11 +53,11 @@ span{
 .services section{
     display: flex;
     flex-direction: row;
-    gap: 50px;
     flex-wrap: wrap;
     align-items: left;
     justify-content: space-evenly;
     width: 100%;
-    padding: 0px 50px;
-    height: 800px;
+    padding: 30px;
+    gap: 50px;
+    height: 100%;
 }

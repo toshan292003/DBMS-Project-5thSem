@@ -13,7 +13,7 @@ export default function Progress(props) {
     if (props.percentage == 0) {
       return 0;
     } else {
-      return 20;
+      return 15;
     }
   }
   return (
@@ -33,9 +33,9 @@ export default function Progress(props) {
               </linearGradient>
             </defs>
             <circle
-              cx="80"
+              cx="75"
               cy="80"
-              r="60"
+              r="50"
               style={{
                 strokeDashoffset: `${something}`,
                 strokeWidth: `${something3()}`,
