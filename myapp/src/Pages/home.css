@@ -142,7 +142,6 @@
   max-width: 50%;
 }
 
-.home-section1 section span,
 .home-section1 section p,
 .home-section1 section h2 {
   color: black;
@@ -155,10 +154,6 @@
   line-height: 2.75rem;
 }
 
-.home-section1 section span {
-  font-weight: 400;
-  font-size: 1.2rem;
-}
 .home-section1 section p {
   font-weight: 400;
   margin: 20px;

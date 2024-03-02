@@ -23,7 +23,6 @@ export default function Home() {
             alt=""
           />
           <section>
-            <span>A smarter way to get that Resume ready!</span>
             <h2>How does our Resume Writer work ?</h2>
             <p>
               Our resume builder simplifies creating professional resumes. Users
@@ -37,7 +36,6 @@ export default function Home() {
         </div>
         <div>
           <section>
-            <span>Upgrade! with your resume.</span>
             <h2>Get Ratings and Check where you have to improve.</h2>
             <p>
               Revamp your resume effortlessly with our intuitive platform. Get

@@ -6,7 +6,20 @@
     width: 100vw;
 }
 
-.outer {
+.probox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.outer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.inner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,8 +36,10 @@ circle {
     position: absolute;
     stroke: url('#GradientColor');
     stroke-width: 20px;
-    stroke-dasharray: 400 ;
+    stroke-dasharray: 314 ;
     stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
 }
 span{
     position: absolute;
@@ -35,12 +50,12 @@ span{
 
 .services section{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 50px;
     flex-wrap: wrap;
     align-items: left;
     justify-content: space-evenly;
     width: 100%;
-    padding-left: 100px;
+    padding: 0px 50px;
     height: 800px;
 }
