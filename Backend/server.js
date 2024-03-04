@@ -12,7 +12,7 @@ app.get('/',(req,res)=>{
     return res.json("From backend side.");
 })
 
-app.get('/tables',(req,res)=>{
+app.get('/tables/location',(req,res)=>{
     const sql = "SELECT * FROM testingdb.location";
     connection.query(sql,(err,data)=>{
         if(err) return res.json(err);
