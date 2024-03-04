@@ -12,6 +12,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0px;
 }
 
 .nav-profile{

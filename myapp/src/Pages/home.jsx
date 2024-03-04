@@ -6,7 +6,9 @@ export default function Home() {
       <div className="homedec"></div>
       <div className="homebox">
         <div>
-          <img src="https://e1.pxfuel.com/desktop-wallpaper/766/164/desktop-wallpaper-letter-r-r-logo-3d.jpg"alt=""/>
+          <section>
+            <img src="https://img.freepik.com/free-photo/many-drops-water-drop-banana-leaves_1150-16400.jpg?t=st=1709556197~exp=1709559797~hmac=62d88f21e943424b5f12beaddc0529c7eb5f5c92b0187961aebc0a3a2f3ff28c&w=1060"alt=""/>
+          </section>
           <h1>Water Purity Tracker</h1>
           <button>Add Samples</button>
         </div>
@@ -48,24 +50,6 @@ export default function Home() {
             src="https://img.freepik.com/free-vector/customer-feedback-online-review-concept_107791-13281.jpg?w=1380&t=st=1707736986~exp=1707737586~hmac=ac4b5352ac113168edd7eab2b024487f6c205a9622f905a2cda6a2ce3794e1a5"
             alt=""
           />
-        </div>
-      </div>
-      <div className="home-resume-samples">
-        <span>
-          Elevate your resume with our selection of professional templates
-          tailored to your industry.
-        </span>
-        <h2>Select your Resume Template</h2>
-        <p>
-        Choose from a variety of professional resume templates to showcase your skills and experience effectively.
-        </p>
-        <div>
-            <img src="https://marketplace.canva.com/EAFjRZP7Qy4/1/0/1131w/canva-minimalist-modern-professional-cv-resume-xkDELtpQH94.jpg" alt="" />
-            <img src="https://marketplace.canva.com/EAFjRZP7Qy4/1/0/1131w/canva-minimalist-modern-professional-cv-resume-xkDELtpQH94.jpg" alt="" />
-            <img src="https://marketplace.canva.com/EAFjRZP7Qy4/1/0/1131w/canva-minimalist-modern-professional-cv-resume-xkDELtpQH94.jpg" alt="" />
-            <img src="https://marketplace.canva.com/EAFjRZP7Qy4/1/0/1131w/canva-minimalist-modern-professional-cv-resume-xkDELtpQH94.jpg" alt="" />
-            <img src="https://marketplace.canva.com/EAFjRZP7Qy4/1/0/1131w/canva-minimalist-modern-professional-cv-resume-xkDELtpQH94.jpg" alt="" />
-            <img src="https://marketplace.canva.com/EAFjRZP7Qy4/1/0/1131w/canva-minimalist-modern-professional-cv-resume-xkDELtpQH94.jpg" alt="" />
         </div>
       </div>
     </>

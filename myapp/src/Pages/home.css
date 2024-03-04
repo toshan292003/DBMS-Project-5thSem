@@ -28,6 +28,13 @@
   overflow: hidden;
 }
 
+.homebox div section{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 .homebox div {
   display: flex;
   flex-direction: column;
@@ -39,8 +46,8 @@
 }
 
 .homebox img {
-  height: 200px;
-  border-radius: 50%;
+  height: 100%;
+  transform: translateX(-50px);
 }
 
 .homebox button {
