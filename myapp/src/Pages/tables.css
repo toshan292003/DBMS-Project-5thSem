@@ -1,13 +1,33 @@
 .tables{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 89vh;
-    width: 100%;
+    width: 100vw;
     align-items: center;
     justify-content: center;
 
 }
 
-.tables th{
-    padding: 20px 100px;
+.tables section ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    width: 80vw;
+}
+
+.tables section ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.tables section ul li{
+    text-align: left;
+    list-style-type: none;
+    width: 25%;
+    font-size: 1.3rem;
+    padding: 10px;
 }

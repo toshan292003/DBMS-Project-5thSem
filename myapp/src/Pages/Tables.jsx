@@ -14,26 +14,24 @@ export default function Tables() {
     return (
         <>
             <div className="tables">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Loc_ID</th>
-                            <th>Lattitude</th>
-                            <th>Longitude</th>
-                            <th>Loc_Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map((d,i)=>(
-                            <tr key={i}>
-                                <td>{d.Loc_ID}</td>
-                                <td>{d.Loc_lattitude}</td>
-                                <td>{d.Loc_longitude}</td>
-                                <td>{d.Loc_name}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <section>
+                    <ul>
+                        <li>Loc_ID</li>
+                        <li>Lattitude</li>
+                        <li>Longitude</li>
+                        <li>Loc_Name</li>
+                    </ul>
+                </section>
+                {data.map((d,i)=>(
+                    <section>
+                        <ul>
+                            <li>{d.Loc_ID}</li>
+                            <li>{d.Loc_lattitude}</li>
+                            <li>{d.Loc_longitude}</li>
+                            <li>{d.Loc_name}</li>
+                        </ul>
+                    </section>
+                ))}
             </div>
         </>
     )
