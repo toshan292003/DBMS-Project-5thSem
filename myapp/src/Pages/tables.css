@@ -1,0 +1,13 @@
+.tables{
+    display: flex;
+    flex-direction: row;
+    height: 89vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.tables th{
+    padding: 20px 100px;
+}
