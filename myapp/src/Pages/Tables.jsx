@@ -18,7 +18,7 @@ export default function Tables() {
 
     const [data,setData] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:3001/tables/location')
+        fetch('http://localhost:3001/tables/measurement')
         .then(res=>res.json())
         .then(data => setData(data))
         .catch(err=>console.log(err));
@@ -44,10 +44,11 @@ export default function Tables() {
                 {data.map((d,i)=>(
                     <section>
                         <ul>
-                            <li>{d.Loc_ID}</li>
-                            <li>{d.Loc_lattitude}</li>
-                            <li>{d.Loc_longitude}</li>
-                            <li>{d.Loc_name}</li>
+                            <li>{d.Measure_ID}</li>
+                            <li>{d.Sample_id}</li>
+                            <li>{d.Param_id}</li>
+                            <li>{d.TimeStamp}</li>
+                            <li>{d.Value}</li>
                         </ul>
                     </section>
                 ))}
