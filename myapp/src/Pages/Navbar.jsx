@@ -12,6 +12,7 @@ export default function Navbar() {
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/services">Services</a></li>
+                        <li><a href="/input">Input</a></li>
                         <li><a href="/tables">Tables</a></li>
                         <li><a href="/about">About Us</a></li>
                         <li><a href="">Contact Us</a></li>

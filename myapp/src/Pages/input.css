@@ -1,0 +1,24 @@
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    height: 80vh;
+}
+
+.input form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.input form input{
+    width: 200px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
+}
