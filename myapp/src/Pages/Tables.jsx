@@ -25,12 +25,12 @@ export default function Tables() {
             setKeys(["Measure_ID", "Sample_id", "Param_id", "TimeStamp", "Value"]);
         }
         else if (k == 3) {
-            setTitles(["Measure_id", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            setTitles(["ParamID", "Units", "Name"]);
             fetch('http://localhost:3001/tables/parameter')
                 .then(res => res.json())
                 .then(data => setData(data))
                 .catch(err => console.log(err));
-            setKeys(["Measure_ID", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            setKeys(["Param_ID", "Units", "Name"]);
         }
         else if (k == 4) {
             setTitles(["Measure_id", "Sample_id", "Param_id", "TimeStamp", "Value"]);
