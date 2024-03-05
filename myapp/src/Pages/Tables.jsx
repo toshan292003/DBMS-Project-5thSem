@@ -33,20 +33,20 @@ export default function Tables() {
             setKeys(["Param_ID", "Units", "Name"]);
         }
         else if (k == 4) {
-            setTitles(["Measure_id", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            setTitles(["Std_ID", "Param_id", "Description", "MinValue", "MaxValue"]);
             fetch('http://localhost:3001/tables/quality')
-                .then(res => res.json())
-                .then(data => setData(data))
-                .catch(err => console.log(err));
-            setKeys(["Measure_ID", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            .then(res => res.json())
+            .then(data => setData(data))
+            .catch(err => console.log(err));
+            setKeys(["Std_ID", "Param_id", "Description", "MinValue", "MaxValue"]);
         }
         else if (k == 5) {
-            setTitles(["Measure_id", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            setTitles(["Samp_ID", "Lattitude", "Longitude", "Loc_ID"]);
             fetch('http://localhost:3001/tables/sampling_point')
-                .then(res => res.json())
-                .then(data => setData(data))
-                .catch(err => console.log(err));
-            setKeys(["Measure_ID", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            .then(res => res.json())
+            .then(data => setData(data))
+            .catch(err => console.log(err));
+            setKeys (["Samp_ID", "Lattitude", "Longitude", "Loc_ID"]);
         }
     }
 

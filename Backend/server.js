@@ -35,7 +35,7 @@ app.get('/tables/parameter',(req,res)=>{
     });
 });
 app.get('/tables/quality',(req,res)=>{
-    const sql = "SELECT * FROM testingdb.quality";
+    const sql = "SELECT * FROM testingdb.quallity";
     connection.query(sql,(err,data)=>{
         if(err) return res.json(err);
         else return res.json(data);
