@@ -27,6 +27,29 @@ app.get('/tables/measurement',(req,res)=>{
         else return res.json(data);
     });
 });
+app.get('/tables/parameter',(req,res)=>{
+    const sql = "SELECT * FROM testingdb.parameter";
+    connection.query(sql,(err,data)=>{
+        if(err) return res.json(err);
+        else return res.json(data);
+    });
+});
+app.get('/tables/quality',(req,res)=>{
+    const sql = "SELECT * FROM testingdb.quality";
+    connection.query(sql,(err,data)=>{
+        if(err) return res.json(err);
+        else return res.json(data);
+    });
+});
+app.get('/tables/sampling_point',(req,res)=>{
+    const sql = "SELECT * FROM testingdb.sampling_point";
+    connection.query(sql,(err,data)=>{
+        if(err) return res.json(err);
+        else return res.json(data);
+    });
+});
+
+
 
 app.listen(port,()=>{
     console.log("Server has started and is running in port number "+port);

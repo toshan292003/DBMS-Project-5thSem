@@ -3,52 +3,87 @@ import './tables.css';
 
 export default function Tables() {
 
-    const [Table,setTable] = useState(1);
-    
-    const [Titles,setTitles] = useState(["Location_ID","Lattitude","Longitude","Location_Name"])
+    const [Keys, setKeys] = useState([]);
+    const [Titles, setTitles] = useState(["Location_ID", "Lattitude", "Longitude", "Location_Name"])
 
-    let TitleChange = (k)=>{
-        if(k==1){
-            setTitles(["Location_ID","Lattitude","Longitude","Location_Name"]);
+
+    let TitleChange = (k) => {
+        if (k == 1) {
+            setTitles(["Location_ID", "Lattitude", "Longitude", "Location_Name"]);
+            fetch('http://localhost:3001/tables/location')
+                .then(res => res.json())
+                .then(data => setData(data))
+                .catch(err => console.log(err));
+            setKeys(["Loc_ID", "Loc_lattitude", "Loc_longitude", "Loc_name"]);
         }
-        else if(k==2){
-            setTitles(["Location_ID","Lattitude","Longitude","Location_Name"]);
+        else if (k == 2) {
+            setTitles(["Measure_id", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            fetch('http://localhost:3001/tables/measurement')
+                .then(res => res.json())
+                .then(data => setData(data))
+                .catch(err => console.log(err));
+            setKeys(["Measure_ID", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+        }
+        else if (k == 3) {
+            setTitles(["Measure_id", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            fetch('http://localhost:3001/tables/parameter')
+                .then(res => res.json())
+                .then(data => setData(data))
+                .catch(err => console.log(err));
+            setKeys(["Measure_ID", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+        }
+        else if (k == 4) {
+            setTitles(["Measure_id", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            fetch('http://localhost:3001/tables/quality')
+                .then(res => res.json())
+                .then(data => setData(data))
+                .catch(err => console.log(err));
+            setKeys(["Measure_ID", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+        }
+        else if (k == 5) {
+            setTitles(["Measure_id", "Sample_id", "Param_id", "TimeStamp", "Value"]);
+            fetch('http://localhost:3001/tables/sampling_point')
+                .then(res => res.json())
+                .then(data => setData(data))
+                .catch(err => console.log(err));
+            setKeys(["Measure_ID", "Sample_id", "Param_id", "TimeStamp", "Value"]);
         }
     }
 
-    const [data,setData] = useState([]);
-    useEffect(()=>{
+
+
+    const [data, setData] = useState([]);
+    useEffect(() => {
         fetch('http://localhost:3001/tables/measurement')
-        .then(res=>res.json())
-        .then(data => setData(data))
-        .catch(err=>console.log(err));
+            .then(res => res.json())
+            .then(data => setData(data))
+            .catch(err => console.log(err));
     }, [])
 
     return (
         <>
             <div className="tables">
                 <div>
-                    <button onClick={TitleChange}>Location</button>
-                    <button>Measurement</button>
-                    <button>Parameters</button>
-                    <button>Quality</button>
-                    <button>Sampling</button>
+                    <button onClick={() => TitleChange(1)}>Location</button>
+                    <button onClick={() => TitleChange(2)}>Measurement</button>
+                    <button onClick={() => TitleChange(3)}>Parameters</button>
+                    <button onClick={() => TitleChange(4)}>Quality</button>
+                    <button onClick={() => TitleChange(5)}>Sampling</button>
+                    
                 </div>
                 <section>
                     <ul>
-                        {Titles.map((d,i)=>(
+                        {Titles.map((d) => (
                             <li>{d}</li>
-                        ))} 
+                        ))}
                     </ul>
                 </section>
-                {data.map((d,i)=>(
+                {data.map((d) => (
                     <section>
                         <ul>
-                            <li>{d.Measure_ID}</li>
-                            <li>{d.Sample_id}</li>
-                            <li>{d.Param_id}</li>
-                            <li>{d.TimeStamp}</li>
-                            <li>{d.Value}</li>
+                            {Keys.map((n) => (
+                                <li>{d[n]}</li>
+                            ))}
                         </ul>
                     </section>
                 ))}
