@@ -3,6 +3,10 @@ let app = express();
 let port = 3001;
 let connection = require('./database');
 let cors = require('cors');
+let bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true}));
 
 app.use(cors());
 
@@ -48,6 +52,10 @@ app.get('/tables/sampling_point',(req,res)=>{
         else return res.json(data);
     });
 });
+
+app.post("/input",(req,res)=>{
+    let name = req.body.
+})
 
 
 

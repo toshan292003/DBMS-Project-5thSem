@@ -17,8 +17,9 @@ export default function Input(){
                 <h1>ENTER DETAILS:</h1>
                 <form action="">
                     {Fields.map((names)=>(
-                        <input type="text" placeholder={names}/>
+                        <input type="text" name={names} placeholder={names}/>
                     ))}
+                    <input type="button" value="Submit"/>
                 </form>
             </div>
         </>
