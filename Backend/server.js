@@ -53,16 +53,12 @@ app.get('/tables/sampling_point',(req,res)=>{
     });
 });
 
-app.post("/input",(req,res)=>{
-    let name = req.body.
-})
-
 
 
 app.listen(port,()=>{
     console.log("Server has started and is running in port number "+port);
     connection.connect((err)=>{
-        if(err){
+        if(err){y
             console.log(err);
         }
         else{
