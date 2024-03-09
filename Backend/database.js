@@ -7,4 +7,13 @@ let connection = mysql.createConnection({
     password: 'Saman@123',
 });
 
+connection.connect((err)=>{
+    if(err){y
+        console.log(err);
+    }
+    else{
+        console.log("DB connected.");
+    }
+})
+
 module.exports = connection;

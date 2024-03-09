@@ -5,13 +5,21 @@ let connection = require('./database');
 let cors = require('cors');
 let bodyParser = require('body-parser');
 
+
+
+//importing all controllers
+const LocController = require('./Controllers/LocController');
+
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
+app.use(express.json());
 app.use(cors());    
 
 app.get('/',(req,res)=>{
-    res.send("Hello this is the backend server.");
+    res.send("Hello this is the backend server of DBMS mini poject.");
     console.log(req);
     return res.json("From backend side.");
 })
@@ -55,16 +63,12 @@ app.get('/tables/sampling_point',(req,res)=>{
 
 
 
+app.use("/app/input",LocController);
+
+
+
 app.listen(port,()=>{
-    console.log("Server has started and is running in port number "+port);
-    connection.connect((err)=>{
-        if(err){y
-            console.log(err);
-        }
-        else{
-            console.log("DB connected.");
-        }
-    })
+    console.log("Server has started and is running in port number " + port);
 })
 
 module.exports = port;
