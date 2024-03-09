@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './Pages/Navbar';
 import About from './Pages/about';
 import Home from './Pages/home';
-import Location from './Pages/location';
+import Location from './Pages/Inputs/location';
 import Services from './Pages/services';
 import Tables from './Pages/Tables';
 
