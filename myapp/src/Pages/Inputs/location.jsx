@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function Input(){
+export default function Location(){
 
     const [formData,setFormData] = useState({
         LocID : '',
