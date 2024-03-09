@@ -14,7 +14,7 @@ export default function Input(){
     return(
         <>
             <div className="input">
-                <h1>ENTER DETAILS:</h1>
+                <h1>ENTER LOCATION DETAILS:</h1>
                 <form action="">
                     {Fields.map((names)=>(
                         <input type="text" name={names} placeholder={names}/>

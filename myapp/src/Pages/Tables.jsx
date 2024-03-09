@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import './tables.css';
 
-export default function Tables() {
 
+export default function Tables() {
+    const port = 3003;
     const [Keys, setKeys] = useState([]);
     const [Titles, setTitles] = useState(["Location_ID", "Lattitude", "Longitude", "Location_Name"])
-
 
     let TitleChange = (k) => {
         if (k == 1) {
             setTitles(["Location_ID", "Lattitude", "Longitude", "Location_Name"]);
-            fetch('http://localhost:3001/tables/location')
+            fetch(`http://localhost:${port}/tables/location`)
                 .then(res => res.json())
                 .then(data => setData(data))
                 .catch(err => console.log(err));
@@ -18,7 +18,7 @@ export default function Tables() {
         }
         else if (k == 2) {
             setTitles(["Measure_id", "Sample_id", "Param_id", "TimeStamp", "Value"]);
-            fetch('http://localhost:3001/tables/measurement')
+            fetch(`http://localhost:${port}/tables/measurement`)
                 .then(res => res.json())
                 .then(data => setData(data))
                 .catch(err => console.log(err));
@@ -26,7 +26,7 @@ export default function Tables() {
         }
         else if (k == 3) {
             setTitles(["ParamID", "Units", "Name"]);
-            fetch('http://localhost:3001/tables/parameter')
+            fetch(`http://localhost:${port}/tables/parameter`)
                 .then(res => res.json())
                 .then(data => setData(data))
                 .catch(err => console.log(err));
@@ -34,7 +34,7 @@ export default function Tables() {
         }
         else if (k == 4) {
             setTitles(["Std_ID", "Param_id", "Description", "MinValue", "MaxValue"]);
-            fetch('http://localhost:3001/tables/quality')
+            fetch(`http://localhost:${port}/tables/quality`)
             .then(res => res.json())
             .then(data => setData(data))
             .catch(err => console.log(err));
@@ -42,7 +42,7 @@ export default function Tables() {
         }
         else if (k == 5) {
             setTitles(["Samp_ID", "Lattitude", "Longitude", "Loc_ID"]);
-            fetch('http://localhost:3001/tables/sampling_point')
+            fetch(`http://localhost:${port}/tables/sampling_point`)
             .then(res => res.json())
             .then(data => setData(data))
             .catch(err => console.log(err));
@@ -54,7 +54,7 @@ export default function Tables() {
 
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3001/tables/measurement')
+        fetch(`http://localhost:${port}/tables/measurement`)
             .then(res => res.json())
             .then(data => setData(data))
             .catch(err => console.log(err));

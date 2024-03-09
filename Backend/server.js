@@ -1,6 +1,6 @@
 let express = require('express');
 let app = express();
-let port = 3001;
+let port = 3003;
 let connection = require('./database');
 let cors = require('cors');
 let bodyParser = require('body-parser');
@@ -8,7 +8,7 @@ let bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
-app.use(cors());
+app.use(cors());    
 
 app.get('/',(req,res)=>{
     res.send("Hello this is the backend server.");
@@ -66,3 +66,5 @@ app.listen(port,()=>{
         }
     })
 })
+
+module.exports = port;
