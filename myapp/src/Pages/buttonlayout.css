@@ -1,0 +1,36 @@
+.buttonlayout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+.buttonlayout section{
+    border-radius: 50px;
+    border: 2px solid gold;
+    overflow: hidden;
+}
+
+.buttonlayout a button{
+    padding: 15px 40px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    transition: all .5s ease;
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+}
+
+.buttonlayout a button:hover{
+    background-color: gold !important;
+    color: #202020 !important;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 10px gold;
+}
+
+.buttonlayout a button:focus{
+    background-color: gold;
+    color: #202020;
+}

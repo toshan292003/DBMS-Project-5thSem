@@ -10,6 +10,7 @@ let bodyParser = require('body-parser');
 //importing all controllers
 const LocController = require('./Controllers/LocController');
 const ParamController = require('./Controllers/ParamController');
+const MeasureController = require('./Controllers/MeasureController');
 
 
 
@@ -66,6 +67,7 @@ app.get('/tables/sampling_point',(req,res)=>{
 
 app.use("/app/input",LocController);
 app.use("/app/input",ParamController);
+app.use("/app/input",MeasureController);
 
 
 

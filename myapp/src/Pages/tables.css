@@ -54,3 +54,8 @@
     background-color: rgba(255, 217, 0, 0.16);
     cursor: pointer;
 }
+
+.tables div button:focus{
+    background-color: gold;
+    color: #202020;
+}

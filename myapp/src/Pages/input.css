@@ -21,4 +21,10 @@
     background-color: transparent;
     border-radius: 5px;
     border: 2px solid white;
+    transition: all .5s ease;
+}
+
+.input form input:focus{
+    background-color: white;
+    color: black;
 }
