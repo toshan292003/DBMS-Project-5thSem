@@ -5,14 +5,13 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function Measurement() {
+export default function Sample() {
 
     const [formData, setFormData] = useState({
-        Measure_ID: '',
-        Sample_id: '',
-        Param_id: '',
-        TimeStamp: '',
-        Value: ''
+        Samp_ID: '',
+        Loc_ID: '',
+        latitude: '',
+        longitude: ''
     })
 
     const handleChange = (e) => {
@@ -21,20 +20,20 @@ export default function Measurement() {
             ...formData,
             [name]: value,
         });
+        
         console.log(formData);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3003/app/input/measurement', formData);
+            const response = await axios.post('http://localhost:3003/app/input/sample', formData);
             console.log(response.data);
             setFormData({
-                Measure_ID: '',
-                Sample_id: '',
-                Param_id: '',
-                TimeStamp: '',
-                Value: ''
+                Samp_ID: '',
+                Loc_ID: '',
+                latitude: '',
+                longitude: ''
             });
             toast.success("Data Inserted Successfully!");
         } catch (error) {
@@ -46,12 +45,12 @@ export default function Measurement() {
     return (
         <>
             <div className="input">
-                <h1>ENTER MEASUREMENT DETAILS:</h1>
+                <h1>ENTER SAMPLE POINT INFORMATION:</h1>
                 <form>
-                    <input type="text" name="Measure_ID" placeholder="Measurement ID" onChange={handleChange} />
-                    <input type="text" name="Sample_id" placeholder="Sampling ID" onChange={handleChange} />
-                    <input type="text" name="Param_id" placeholder="Parameter ID" onChange={handleChange} />
-                    <input type="number" name="Value" placeholder="Value" onChange={handleChange} />
+                    <input type="text" name="Samp_ID" placeholder="Sample ID" onChange={handleChange} />
+                    <input type="text" name="Loc_ID" placeholder="Location ID" onChange={handleChange} />
+                    <input type="text" name="latitude" placeholder="Latitude" onChange={handleChange} />
+                    <input type="text" name="longitude" placeholder="Longitude" onChange={handleChange} />
                     <button onClick={handleSubmit}>SUBMIT</button>
                 </form>
             </div>

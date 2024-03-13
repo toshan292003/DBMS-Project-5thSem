@@ -5,14 +5,14 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function Measurement() {
+export default function Quality() {
 
     const [formData, setFormData] = useState({
-        Measure_ID: '',
-        Sample_id: '',
+        Std_ID: '',
         Param_id: '',
-        TimeStamp: '',
-        Value: ''
+        Description: '',
+        MinValue: '',
+        MaxValue: ''
     })
 
     const handleChange = (e) => {
@@ -27,14 +27,14 @@ export default function Measurement() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3003/app/input/measurement', formData);
+            const response = await axios.post('http://localhost:3003/app/input/quality', formData);
             console.log(response.data);
             setFormData({
-                Measure_ID: '',
-                Sample_id: '',
+                Std_ID: '',
                 Param_id: '',
-                TimeStamp: '',
-                Value: ''
+                Description: '',
+                MinValue: '',
+                MaxValue: ''
             });
             toast.success("Data Inserted Successfully!");
         } catch (error) {
@@ -46,12 +46,13 @@ export default function Measurement() {
     return (
         <>
             <div className="input">
-                <h1>ENTER MEASUREMENT DETAILS:</h1>
+                <h1>ENTER QUALITY DETAILS:</h1>
                 <form>
-                    <input type="text" name="Measure_ID" placeholder="Measurement ID" onChange={handleChange} />
-                    <input type="text" name="Sample_id" placeholder="Sampling ID" onChange={handleChange} />
+                    <input type="text" name="Std_ID" placeholder="Quality ID" onChange={handleChange} />
                     <input type="text" name="Param_id" placeholder="Parameter ID" onChange={handleChange} />
-                    <input type="number" name="Value" placeholder="Value" onChange={handleChange} />
+                    <input type="text" name="Description" placeholder="Description" onChange={handleChange} />
+                    <input type="number" name="MinValue" placeholder="Minimum Value" onChange={handleChange} />
+                    <input type="number" name="MaxValue" placeholder="Maximum Value" onChange={handleChange} />
                     <button onClick={handleSubmit}>SUBMIT</button>
                 </form>
             </div>

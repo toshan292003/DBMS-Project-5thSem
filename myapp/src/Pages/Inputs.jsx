@@ -23,14 +23,10 @@ export default function Inputs() {
                     <a href="/quality">
                         <button>QUALITY</button>
                     </a>
-                    <a href="/sampling">
+                    <a href="/sample">
                         <button>SAMPLING POINT</button>
                     </a>
                 </section>
-            </div>
-            <div>
-                <Location></Location>
-                <Parameter></Parameter>
             </div>
         </>
     )
