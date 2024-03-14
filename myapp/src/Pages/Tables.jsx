@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './tables.css';
 
-
 export default function Tables() {
     const port = 3003;
     const [Keys, setKeys] = useState([]);
@@ -69,7 +68,6 @@ export default function Tables() {
                     <button onClick={() => TitleChange(3)}>Parameters</button>
                     <button onClick={() => TitleChange(4)}>Quality</button>
                     <button onClick={() => TitleChange(5)}>Sampling</button>
-                    
                 </div>
                 <section>
                     <ul>
