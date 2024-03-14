@@ -7,6 +7,7 @@ import Home from './Pages/home';
 import Services from './Pages/services';
 import Tables from './Pages/Tables';
 import Input from './Pages/Inputs';
+import Output from './Pages/output';
 
 import Location from './Pages/Inputs/location';
 import Parameter from './Pages/Inputs/Parameters';
@@ -32,6 +33,7 @@ function App() {
           <Route path = "/quality" element={<Quality></Quality>}></Route>
           <Route path = "/sample" element={<Sample></Sample>}></Route>
           <Route path = "/tables" element={<Tables></Tables>}></Route>
+          <Route path = "/queries" element={<Output></Output>}></Route>
         </Routes>
       </BrowserRouter>
     </>

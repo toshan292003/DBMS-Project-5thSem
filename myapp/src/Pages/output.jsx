@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const YourComponent = () => {
+export default function Output() {
   // Define state variables for location and parameter details
   const [location, setLocation] = useState('');
   const [parameter, setParameter] = useState('');
@@ -25,7 +25,7 @@ const YourComponent = () => {
   };
 
   return (
-    <div>
+    <div className="output-box">
       <h1>Location and Parameter Selection</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="location">Select Location:</label>
@@ -48,6 +48,4 @@ const YourComponent = () => {
       </form>
     </div>
   );
-};
-
-export default YourComponent;
+}
