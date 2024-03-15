@@ -37,7 +37,7 @@ app.get('/tables/location',(req,res)=>{
 });
 
 app.get('/tables/measurement',(req,res)=>{
-    const sql = "SELECT * FROM testingdb.measurement";
+    const sql = "SELECT * FROM testingdb.measurement ORDER BY Sample_id";
     connection.query(sql,(err,data)=>{
         if(err) return res.json(err);
         else return res.json(data);

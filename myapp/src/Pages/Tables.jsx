@@ -69,7 +69,7 @@ export default function Tables() {
                     <button onClick={() => TitleChange(4)}>Quality</button>
                     <button onClick={() => TitleChange(5)}>Sampling</button>
                 </div>
-                <section>
+                <section>   
                     <ul>
                         {Titles.map((d) => (
                             <li>{d}</li>
