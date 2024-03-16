@@ -3,7 +3,7 @@ import "./carousel.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-export default function Carousel() {
+export default function Carousel(props) {
   const settings = {
     dots: false,
     infinite: true,
@@ -13,23 +13,13 @@ export default function Carousel() {
     cssEase: "ease-in-out",
   };
 
-  const details = [
-    {
-      img: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      img: "https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      img: "https://images.pexels.com/photos/248747/pexels-photo-248747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-  ];
+  
 
   return (
     <>
       <div className="carou">
         <Slider {...settings}>
-          {details.map((d) => (
+          {props.details.map((d) => (
             <div>
               <img src={d.img} />
             </div>

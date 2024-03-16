@@ -1,19 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Carousel from "../Components/Carousel";
 import Progress from "../Components/Progress";
 export default function Services() {
 
+  const port = 3003;
+  const [Keys, setKeys] = useState(["Loc_name", "Loc_ID", "Percentage_Purity", "Water_Purity_Status"]);
+  const [Titles, setTitles] = useState(["Location Name", "Loc_ID", "Purity %", "Water Purity Status"]);
+
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:${port}/app/tables/location`)
+      .then(res => res.json())
+      .then(data => setData(data))
+      .catch(err => console.log(err));
+  }, [])
+
+  const details = [
+    {
+      img: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+      img: "https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+      img: "https://images.pexels.com/photos/248747/pexels-photo-248747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+  ];
+
   return (
     <>
       <div className="services">
-        <Carousel></Carousel>
+        <Carousel details = {details}></Carousel>
         <section>
-            <Progress percentage = "15" title = "Area-1"></Progress>
-            <Progress percentage = "97" title = "Area-2"></Progress>
-            <Progress percentage = "27" title = "Area-3"></Progress>
-            <Progress percentage = "100" title = "Area-4"></Progress>
-            <Progress percentage = "0" title = "Area-5"></Progress>
-            <Progress percentage = "50" title = "Area-6"></Progress>
+          {data.map((n) => (
+            <Progress percentage={parseInt(n.Loc_lattitude)} title={n.Loc_name}></Progress>
+          ))}
         </section>
       </div>
     </>

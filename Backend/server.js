@@ -13,7 +13,8 @@ const ParamController = require('./Controllers/ParamController');
 const MeasureController = require('./Controllers/MeasureController');
 const QualityController = require('./Controllers/QualityController');
 const SampleController = require('./Controllers/SampleController');
-
+const PurityController = require('./Controllers/PurityController');
+const AllLocations = require('./Controllers/AllLocations');
 
 
 app.use(bodyParser.json());
@@ -67,11 +68,16 @@ app.get('/tables/sampling_point',(req,res)=>{
 
 
 
+
+
+
 app.use("/app/input",LocController);
 app.use("/app/input",ParamController);
 app.use("/app/input",MeasureController);
 app.use("/app/input",QualityController);
 app.use("/app/input",SampleController);
+app.use("/app",PurityController);
+app.use("/app",AllLocations);
 
 
 

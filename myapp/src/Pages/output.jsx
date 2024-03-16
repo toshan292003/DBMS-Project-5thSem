@@ -1,6 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function Output() {
+
+  const port = 3003;
+  const [Keys, setKeys] = useState(["Loc_name", "Loc_ID", "Percentage_Purity", "Water_Purity_Status"]);
+  const [Titles, setTitles] = useState(["Location Name", "Loc_ID", "Purity %", "Water Purity Status"])
+
   // Define state variables for location and parameter details
   const [location, setLocation] = useState('');
   const [parameter, setParameter] = useState('');
@@ -16,36 +22,75 @@ export default function Output() {
   };
 
   // Function to handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Process the selected location and parameter
-    console.log('Selected Location:', location);
-    console.log('Selected Parameter:', parameter);
-    // You can perform further actions here like API calls, state updates, etc.
+    try {
+      const response = await axios.post('http://localhost:3003/app/queries/location', location);
+      console.log(response.data);
+      console.log("Data sent Successfully");
+    } catch (error) {
+      console.error('Error submitting data:', error);
+    }
   };
 
+
+  const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:${port}/app/queries/locdetails`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log("Received data:", data); // Log the received data
+  //       setData(data);
+  //     })
+  //     .catch(err => console.log(err));
+  // }, []);
+
+
   return (
-    <div className="output-box">
-      <h1>Location and Parameter Selection</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="location">Select Location:</label>
-        <select id="location" value={location} onChange={handleLocationChange}>
-          <option value="">-- Select Location --</option>
-          <option value="Location 1">Location 1</option>
-          <option value="Location 2">Location 2</option>
-          <option value="Location 3">Location 3</option>
-        </select>
-        <br />
-        <label htmlFor="parameter">Select Parameter:</label>
-        <select id="parameter" value={parameter} onChange={handleParameterChange}>
-          <option value="">-- Select Parameter --</option>
-          <option value="Parameter 1">Parameter 1</option>
-          <option value="Parameter 2">Parameter 2</option>
-          <option value="Parameter 3">Parameter 3</option>
-        </select>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <>
+      <div className="input">
+        <h1>Location and Parameter Selection</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="location">Select Location:</label>
+          <select value={location} onChange={handleLocationChange}>
+            <option value="Netravathi">Netravathi</option>
+            <option value="Location 2">Location 2</option>
+            <option value="Location 3">Location 3</option>
+          </select>
+          <br />
+          <label htmlFor="parameter">Select Parameter:</label>
+          <select value={parameter} onChange={handleParameterChange}>
+            <option value="P1">Temperature</option>
+            <option value="P2">pH Level</option>
+            <option value="P3">Dissolved Oxygen</option>
+            <option value="P4">Turbidity</option>
+            <option value="P5">Conductivity</option>
+          </select>
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div className="tables">
+        <section>
+          <ul>
+            {Titles.map((d) => (
+              <li>{d}</li>
+            ))}
+          </ul>
+        </section>
+        {data.map((d) => (
+          <section>
+            <ul>
+              {Keys.map((n) => (
+                <li>{d[n]}</li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </>
+
   );
 }

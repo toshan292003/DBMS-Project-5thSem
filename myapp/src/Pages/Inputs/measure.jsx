@@ -11,7 +11,6 @@ export default function Measurement() {
         Measure_ID: '',
         Sample_id: '',
         Param_id: '',
-        TimeStamp: '',
         Value: ''
     })
 
@@ -33,7 +32,6 @@ export default function Measurement() {
                 Measure_ID: '',
                 Sample_id: '',
                 Param_id: '',
-                TimeStamp: '',
                 Value: ''
             });
             toast.success("Data Inserted Successfully!");
