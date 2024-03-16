@@ -12,9 +12,7 @@ export default function Carousel(props) {
     autoplaySpeed: 2000,
     cssEase: "ease-in-out",
   };
-
   
-
   return (
     <>
       <div className="carou">

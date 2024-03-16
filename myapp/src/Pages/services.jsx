@@ -13,6 +13,7 @@ export default function Services() {
       .then(res => res.json())
       .then(data => setData(data))
       .catch(err => console.log(err));
+      console.log(data)
   }, [])
 
   useEffect(()=>{
@@ -21,13 +22,13 @@ export default function Services() {
 
   const details = [
     {
-      img: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      img: "https://pbs.twimg.com/media/Etg_8rxUcAoMxH1.jpg",
     },
     {
-      img: "https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      img: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Cauvery_Kaveri_River_Karnataka_India_%282%29.jpg",
     },
     {
-      img: "https://images.pexels.com/photos/248747/pexels-photo-248747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      img: "https://live.staticflickr.com/4511/37447307270_0438d76443_b.jpg",
     },
   ];
 

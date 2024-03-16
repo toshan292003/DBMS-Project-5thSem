@@ -6,6 +6,7 @@ const connection = require('../database');
 router.get('/quality/locations', (req, res) => {
     let sql = `SELECT
     l.Loc_name,
+    l.Link,
     sp.Loc_ID,
     CASE
         WHEN COUNT(*) = 0 THEN 'No Measurements'
