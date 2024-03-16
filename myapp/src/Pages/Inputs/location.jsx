@@ -4,14 +4,14 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 export default function Location(){
 
     const [formData,setFormData] = useState({
         LocID : '',
         lat : '',
         long : '',
-        LocName : ''
+        LocName : '',
+        Link: ''
     })
 
     const handleChange = (e) => {
@@ -32,7 +32,8 @@ export default function Location(){
             LocID : '',
             lat : '',
             long : '',
-            LocName : ''
+            LocName : '',
+            Link : ''
           });
           toast.success("Data Inserted Successfully!");
         } catch (error) {
@@ -50,6 +51,7 @@ export default function Location(){
                     <input type="text" name="lat" placeholder="Latitude" onChange={handleChange}/>
                     <input type="text" name="long" placeholder="Longitude" onChange={handleChange}/>
                     <input type="text" name="LocName" placeholder="Location Name" onChange={handleChange}/>
+                    <input type="text" name="Link" placeholder="Image Link" onChange={handleChange}/>
                     <button onClick={handleSubmit}>SUBMIT</button>
                 </form>
             </div>
