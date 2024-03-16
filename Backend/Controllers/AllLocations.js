@@ -3,7 +3,6 @@ const router = express.Router();
 
 const connection = require('../database');
 
-
 router.get('/quality/locations', (req, res) => {
     let sql = `SELECT
     l.Loc_name,

@@ -20,31 +20,22 @@ export default function Output() {
   const handleParameterChange = (event) => {
     setParameter(event.target.value);
   };
+  
+  const [data, setData] = useState([]);
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3003/app/queries/location', location);
+      console.log(location);
+      const response = await axios.post('http://localhost:3003/app/queries/location', {location,parameter});
       console.log(response.data);
+      setData(response.data);
       console.log("Data sent Successfully");
     } catch (error) {
       console.error('Error submitting data:', error);
     }
   };
-
-
-  const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(`http://localhost:${port}/app/queries/locdetails`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log("Received data:", data); // Log the received data
-  //       setData(data);
-  //     })
-  //     .catch(err => console.log(err));
-  // }, []);
 
 
   return (

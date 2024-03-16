@@ -2,10 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 const connection = require('../database');
-let location = "";
 
-router.get('/queries/locdetails',(req,res)=>{
-    const location = req.query.location;
+router.post('/queries/location',(req,res)=>{
+    const location = req.body.location;
+    const parameter = req.body.parameter;
+    console.log(location);
+    console.log(parameter);
+    
     const sql = `SELECT
     l.Loc_name,
     sp.Loc_ID,
@@ -27,14 +30,16 @@ router.get('/queries/locdetails',(req,res)=>{
     INNER JOIN
         testingdb.quality q ON m.Param_id = q.Param_ID
     WHERE
-        l.Loc_name = ${location}
+        l.Loc_name = '${location}'
     GROUP BY
-        l.Loc_name, sp.Loc_ID;
-    `;
+        l.Loc_name, sp.Loc_ID;`;
 
     connection.query(sql,(err,data)=>{
         if(err) return res.json(err);
-        else return res.json(data);
+        else{
+            console.log(data);
+            return res.json(data);
+        } 
     });
 });
 

@@ -29,7 +29,7 @@ export default function Tables() {
                 .then(res => res.json())
                 .then(data => setData(data))
                 .catch(err => console.log(err));
-            setKeys(["Param_ID", "Units", "Name"]);
+            setKeys(["Param_ID", "Units", "ParamName"]);
         }
         else if (k == 4) {
             setTitles(["Std_ID", "Param_id", "Description", "MinValue", "MaxValue"]);

@@ -9,11 +9,15 @@ export default function Services() {
 
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:${port}/app/tables/location`)
+    fetch(`http://localhost:${port}/app/quality/locations`)
       .then(res => res.json())
       .then(data => setData(data))
       .catch(err => console.log(err));
   }, [])
+
+  useEffect(()=>{
+    console.log(data);
+  })
 
   const details = [
     {
@@ -33,7 +37,7 @@ export default function Services() {
         <Carousel details = {details}></Carousel>
         <section>
           {data.map((n) => (
-            <Progress percentage={parseInt(n.Loc_lattitude)} title={n.Loc_name}></Progress>
+            <Progress percentage={parseInt(n.Percentage_Purity)} title={n.Loc_name}></Progress>
           ))}
         </section>
       </div>
