@@ -16,6 +16,11 @@
     overflow: hidden;
 }
 
+.carou div h1{
+    position: absolute;
+    bottom: -100px;
+}
+
 .progress{
     display: block;
     height: 100px;

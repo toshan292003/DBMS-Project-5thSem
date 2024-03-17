@@ -23,12 +23,15 @@ export default function Services() {
   const details = [
     {
       img: "https://pbs.twimg.com/media/Etg_8rxUcAoMxH1.jpg",
+      name: "Netravathi"
     },
     {
       img: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Cauvery_Kaveri_River_Karnataka_India_%282%29.jpg",
+      name: "Netravathi"
     },
     {
       img: "https://live.staticflickr.com/4511/37447307270_0438d76443_b.jpg",
+      name: "Netravathi"
     },
   ];
 

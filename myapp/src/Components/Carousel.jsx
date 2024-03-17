@@ -20,6 +20,7 @@ export default function Carousel(props) {
           {props.details.map((d) => (
             <div>
               <img src={d.img} />
+              <h1>{d.name}</h1>
             </div>
           ))}
         </Slider>
