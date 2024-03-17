@@ -4,8 +4,8 @@ import axios from 'axios';
 export default function Output() {
 
   const port = 3003;
-  const [Keys, setKeys] = useState(["Loc_name", "Loc_ID", "Percentage_Purity", "Water_Purity_Status"]);
-  const [Titles, setTitles] = useState(["Location Name", "Loc_ID", "Purity %", "Water Purity Status"])
+  const [Keys, setKeys] = useState(["Loc_name", "Parameter_Name","Readings", "Standard_Values","Percentage_Purity", "Water_Purity_Status"]);
+  const [Titles, setTitles] = useState(["Location Name", "Parameter Name","Readings", "Standard Values","Percentage Purity", "Water Purity Status"]);
 
   // Define state variables for location and parameter details
   const [location, setLocation] = useState('');
@@ -20,17 +20,17 @@ export default function Output() {
   const handleParameterChange = (event) => {
     setParameter(event.target.value);
   };
-  
-  const [data, setData] = useState([]);
+
+  const [input, setinput] = useState([]);
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       console.log(location);
-      const response = await axios.post('http://localhost:3003/app/queries/location', {location,parameter});
+      const response = await axios.post('http://localhost:3003/app/queries/location', { location, parameter });
       console.log(response.data);
-      setData(response.data);
+      setinput(response.data);
       console.log("Data sent Successfully");
     } catch (error) {
       console.error('Error submitting data:', error);
@@ -46,17 +46,22 @@ export default function Output() {
           <label htmlFor="location">Select Location:</label>
           <select value={location} onChange={handleLocationChange}>
             <option value="Netravathi">Netravathi</option>
-            <option value="Location 2">Location 2</option>
-            <option value="Location 3">Location 3</option>
+            <option value="Kasavanahalli Lake">Kasavanahalli Lake</option>
+            <option value="Rayasandra Lake">Rayasandra Lake</option>
+            <option value="Nelamangala Lake">Nelamangala Lake</option>
+            <option value="Sarakki Lake">Sarakki Lake</option>
+            <option value="Chikkabanavara Lake">Chikkabanavara Lake</option>
+            <option value="Arakere Lake">Arakere Lake</option>
+            <option value="Basavanapura Lake">Basavanapura Lake</option>
           </select>
           <br />
           <label htmlFor="parameter">Select Parameter:</label>
           <select value={parameter} onChange={handleParameterChange}>
-            <option value="P1">Temperature</option>
-            <option value="P2">pH Level</option>
-            <option value="P3">Dissolved Oxygen</option>
-            <option value="P4">Turbidity</option>
-            <option value="P5">Conductivity</option>
+            <option value="Temperature">Temperature</option>
+            <option value="pH Level">pH Level</option>
+            <option value="Dissolved Oxygen">Dissolved Oxygen</option>
+            <option value="Turbidity">Turbidity</option>
+            <option value="Conductivity">Conductivity</option>
           </select>
           <br />
           <button type="submit">Submit</button>
@@ -71,7 +76,7 @@ export default function Output() {
             ))}
           </ul>
         </section>
-        {data.map((d) => (
+        {input.map((d) => (
           <section>
             <ul>
               {Keys.map((n) => (
