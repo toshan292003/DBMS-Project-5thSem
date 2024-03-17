@@ -28,3 +28,24 @@
     background-color: white;
     color: black;
 }
+
+.input form button,
+.output form button{
+    padding: 10px 30px ;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+
+.input form button:hover,
+.output form button:hover{
+    background-color: white;
+    color: #202020;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.437),
+                0px 0px 30px rgba(255, 255, 255, 0.237);
+}

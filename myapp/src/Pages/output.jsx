@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import './output.css';
 export default function Output() {
 
   const port = 3003;
@@ -28,6 +28,7 @@ export default function Output() {
     event.preventDefault();
     try {
       console.log(location);
+      console.log(parameter);
       const response = await axios.post('http://localhost:3003/app/queries/location', { location, parameter });
       console.log(response.data);
       setinput(response.data);
@@ -40,31 +41,35 @@ export default function Output() {
 
   return (
     <>
-      <div className="input">
-        <h1>Location and Parameter Selection</h1>
+      <div className="output">
+        <h1>Select the Location and Parameter</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="location">Select Location:</label>
-          <select value={location} onChange={handleLocationChange}>
-            <option value="Netravathi">Netravathi</option>
-            <option value="Kasavanahalli Lake">Kasavanahalli Lake</option>
-            <option value="Rayasandra Lake">Rayasandra Lake</option>
-            <option value="Nelamangala Lake">Nelamangala Lake</option>
-            <option value="Sarakki Lake">Sarakki Lake</option>
-            <option value="Chikkabanavara Lake">Chikkabanavara Lake</option>
-            <option value="Arakere Lake">Arakere Lake</option>
-            <option value="Basavanapura Lake">Basavanapura Lake</option>
-          </select>
-          <br />
-          <label htmlFor="parameter">Select Parameter:</label>
-          <select value={parameter} onChange={handleParameterChange}>
-            <option value="Temperature">Temperature</option>
-            <option value="pH Level">pH Level</option>
-            <option value="Dissolved Oxygen">Dissolved Oxygen</option>
-            <option value="Turbidity">Turbidity</option>
-            <option value="Conductivity">Conductivity</option>
-          </select>
-          <br />
-          <button type="submit">Submit</button>
+          <div>
+            <label htmlFor="location">Select Location:</label>
+            <select value={location} onChange={handleLocationChange}>
+              <option value="All">All Locations</option>
+              <option value="Netravathi">Netravathi</option>
+              <option value="Kasavanahalli Lake">Kasavanahalli Lake</option>
+              <option value="Rayasandra Lake">Rayasandra Lake</option>
+              <option value="Nelamangala Lake">Nelamangala Lake</option>
+              <option value="Sarakki Lake">Sarakki Lake</option>
+              <option value="Chikkabanavara Lake">Chikkabanavara Lake</option>
+              <option value="Arakere Lake">Arakere Lake</option>
+              <option value="Basavanapura Lake">Basavanapura Lake</option>
+            </select>
+            <br />
+            <label htmlFor="parameter">Select Parameter:</label>
+            <select value={parameter} onChange={handleParameterChange}>
+              <option value="All">All Parameters</option>
+              <option value="Temperature">Temperature</option>
+              <option value="pH Level">pH Level</option>
+              <option value="Dissolved Oxygen">Dissolved Oxygen</option>
+              <option value="Turbidity">Turbidity</option>
+              <option value="Conductivity">Conductivity</option>
+            </select>
+            <br/>
+          </div>
+          <button type="submit">Get Results</button>
         </form>
       </div>
 

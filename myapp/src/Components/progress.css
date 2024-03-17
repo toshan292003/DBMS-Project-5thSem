@@ -61,3 +61,8 @@ circle {
     gap: 50px;
     height: 100%;
 }
+
+.services section h1{
+    text-transform: uppercase;
+    font-size: 2rem;
+}

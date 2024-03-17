@@ -40,6 +40,7 @@ export default function Services() {
       <div className="services">
         <Carousel details = {details}></Carousel>
         <section>
+          <h1>Top 6 Purest Water Bodies with their Purity Percentage</h1>
           {data.map((n) => (
             <Progress percentage={parseInt(n.Percentage_Purity)} title={n.Loc_name}></Progress>
           ))}
