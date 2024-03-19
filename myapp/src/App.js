@@ -14,6 +14,7 @@ import Parameter from './Pages/Inputs/Parameters';
 import Measurement from './Pages/Inputs/measure';
 import Quality from './Pages/Inputs/quality';
 import Sample from './Pages/Inputs/Sample';
+import Dropdown from './Pages/dropdown';
 
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 
@@ -34,6 +35,7 @@ function App() {
           <Route path = "/sample" element={<Sample></Sample>}></Route>
           <Route path = "/tables" element={<Tables></Tables>}></Route>
           <Route path = "/queries" element={<Output></Output>}></Route>
+          <Route path = "/dropdown" element={<Dropdown></Dropdown>}></Route>
         </Routes>
       </BrowserRouter>
     </>

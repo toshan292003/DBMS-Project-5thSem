@@ -65,6 +65,13 @@ app.get('/tables/sampling_point',(req,res)=>{
         else return res.json(data);
     });
 });
+app.get('/tables/LocNames',(req,res)=>{
+    const sql = "SELECT Loc_name FROM testingdb.location";
+    connection.query(sql,(err,data)=>{
+        if(err) return res.json(err);
+        else return res.json(data);
+    });
+});
 
 
 

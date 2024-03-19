@@ -6,6 +6,7 @@ export default function Output() {
   const port = 3003;
   const [Keys, setKeys] = useState(["Loc_name", "Parameter_Name","Readings", "Standard_Values","Percentage_Purity", "Water_Purity_Status"]);
   const [Titles, setTitles] = useState(["Location Name", "Parameter Name","Readings", "Standard Values","Percentage Purity", "Water Purity Status"]);
+  const options = ['All Parameters','Temperature', 'pH Level', 'Dissolved Oxygen','Turbidity','Conductivity'];
 
   // Define state variables for location and parameter details
   const [location, setLocation] = useState('');
@@ -60,12 +61,9 @@ export default function Output() {
             <br />
             <label htmlFor="parameter">Select Parameter:</label>
             <select value={parameter} onChange={handleParameterChange}>
-              <option value="All">All Parameters</option>
-              <option value="Temperature">Temperature</option>
-              <option value="pH Level">pH Level</option>
-              <option value="Dissolved Oxygen">Dissolved Oxygen</option>
-              <option value="Turbidity">Turbidity</option>
-              <option value="Conductivity">Conductivity</option>
+              {options.map((option, index) => (
+                <option key={index} value={option}>{option}</option>
+              ))}
             </select>
             <br/>
           </div>

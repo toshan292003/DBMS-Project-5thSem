@@ -11,7 +11,7 @@ router.post('/queries/location',(req,res)=>{
     
     let sql = ``;
 
-    if(`${location}`=="All" && `${parameter}` == "All"){
+    if(`${location}`=="All" && `${parameter}` == "All Parameters"){
         sql = `SELECT
         l.Loc_name,
         p.ParamName AS Parameter_Name,
@@ -71,7 +71,7 @@ router.post('/queries/location',(req,res)=>{
             l.Loc_name, p.ParamName, CONCAT(q.MinValue, ' - ', q.MaxValue);`;
     }
 
-    else if(`${parameter}` == 'All'){
+    else if(`${parameter}` == 'All Parameters'){
         sql = `SELECT
         l.Loc_name,
         p.ParamName AS Parameter_Name,
