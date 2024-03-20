@@ -24,6 +24,15 @@ export default function Output() {
 
   const [input, setinput] = useState([]);
 
+  const [data, setData] = useState([]);
+  useEffect(() => {
+      fetch(`http://localhost:${port}/tables/LocNames`)
+          .then(res => res.json())
+          .then(data => setData(data))
+          .catch(err => console.log(err));
+          console.log(data);
+  }, [])
+
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,14 +58,9 @@ export default function Output() {
             <label htmlFor="location">Select Location:</label>
             <select value={location} onChange={handleLocationChange}>
               <option value="All">All Locations</option>
-              <option value="Netravathi">Netravathi</option>
-              <option value="Kasavanahalli Lake">Kasavanahalli Lake</option>
-              <option value="Rayasandra Lake">Rayasandra Lake</option>
-              <option value="Nelamangala Lake">Nelamangala Lake</option>
-              <option value="Sarakki Lake">Sarakki Lake</option>
-              <option value="Chikkabanavara Lake">Chikkabanavara Lake</option>
-              <option value="Arakere Lake">Arakere Lake</option>
-              <option value="Basavanapura Lake">Basavanapura Lake</option>
+              {data.map((option, index) => (
+                <option key={index} value={option.Loc_name}>{option.Loc_name}</option>
+              ))}
             </select>
             <br />
             <label htmlFor="parameter">Select Parameter:</label>

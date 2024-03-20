@@ -16,7 +16,6 @@ export default function Navbar() {
                         <li><a href="/tables">Tables</a></li>
                         <li><a href="/queries">Details</a></li>
                         <li><a href="/about">About Us</a></li>
-                        <li><a href="/dropdown">Testing</a></li>
                     </ul>
                 </div>
             </div>
